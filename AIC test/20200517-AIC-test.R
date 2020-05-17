@@ -1,7 +1,9 @@
 ## Load set up ----
 source("setup.R")
 ## Load data ----
-ess <- haven::read_sav("ess_all.sav")
+## the merge of ESS dataset wave 7 and 8 are used for this analysis (see the branches 'variable selection' and 'data joins')
+
+ess <- haven::read_sav(<filename>)
 ## Check data ----
 #glimpse(ess)
 ## subset ----
@@ -76,7 +78,7 @@ AIC <- AIC_check %>% ## here the check is visualised
         coord_flip() +
         theme_bw() +
         scale_x_discrete(labels = rev(c("Total model", "Cultural backlash", "Protest vote", "Economic grievance", "Constant model"))) +
-        labs(x = "Theory comparison", y = "Akaike’s information criterion (AIC)") +
+        labs(x = "Theory comparison", y = "Akaike$B!G(Bs information criterion (AIC)") +
         theme(text = element_text(family = "Times", color = "Grey20"))
 
 AIC

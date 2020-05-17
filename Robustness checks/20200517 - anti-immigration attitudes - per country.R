@@ -5,19 +5,8 @@ library(broom)
 library(nnet)
 
 # files ----
-ess7 <- haven::read_sav("ESS7M.sav")
-ess8 <- haven::read_sav("ESS8M.sav")
-
-## join the two ess rounds ----
-ess_all <- ess7 %>%
-        rbind(ess8) %>%
-        mutate(yall = as_factor(yall),
-               cntrytype = as_factor(cntrytype),
-               cntry = as_factor(cntry)) %>%
-        select(-prtvtdpl,
-               -prtvtehu) %>%
-        drop_na() %>%
-        mutate_if(is.factor, fct_drop)
+## the merge of ESS dataset wave 7 and 8 are used for this analysis (see the branches 'variable selection' and 'data joins')
+ess_all <- read_sav(<filename>)
 
 ## model function ----
 

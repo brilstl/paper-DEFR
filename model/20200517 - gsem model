@@ -1,6 +1,10 @@
-
-* load file
-use '<filename.dta>' 
+* This is a STATA do-file
+* The files that are used with this script are:
+* dataset with all mature democracies
+* dataset with all post-communist democracies
+* dataset with all post-communist democracies for the robustness check
+* load file (see the branches 'variable selection' and 'data joins')
+use '<filename>' 
 
 * Run gsem model
 

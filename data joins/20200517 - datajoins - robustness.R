@@ -3,8 +3,9 @@ library(tidyverse)
 library(haven)
 
 # files ----
-ess7 <- haven::read_sav("ESS7M.sav")
-ess8 <- haven::read_sav("ESS8M.sav")
+## these files are constructed in the branche 'variable selection'
+ess7 <- haven::read_sav(<ESS7>)
+ess8 <- haven::read_sav(<ESS8>)
 
 # Rename Polisch voting variable ----
 ess7 <- ess7 %>%
@@ -36,6 +37,17 @@ ess_join <- function(region){
 ESS78DESPRN_com <- ess_join("Post-communist democracies")
 
 ESS78DESPRN_mat <- ess_join("Mature democracies")
+
+## join the two ess rounds ----
+ess_all <- ess7 %>%
+        rbind(ess8) %>%
+        mutate(yall = as_factor(yall),
+               cntrytype = as_factor(cntrytype),
+               cntry = as_factor(cntry)) %>%
+        select(-prtvtdpl,
+               -prtvtehu) %>%
+        drop_na() %>%
+        mutate_if(is.factor, fct_drop)
 
 # Bind two waves for robustness check (post communist only) ----
 ESS78DESPR_rob <- ## prtvtdpl = 6[PiS] yall = 2 | prtvtehu = 1 [Fidesz] yall =2

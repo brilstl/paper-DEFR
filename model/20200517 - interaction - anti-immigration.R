@@ -3,8 +3,9 @@ library(tidyverse)
 library(nnet)
 
 # files ----
+## the merge of ESS dataset wave 7 and 8 are used for this analysis (see the branches 'variable selection' and 'data joins')
 
-ess_all <-  haven::read_sav(ess_all.sav)
+ess_all <-  haven::read_sav(<filename>)
 
 # prepoces ----
 
