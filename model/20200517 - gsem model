@@ -1,0 +1,11 @@
+
+* load file
+use '<filename.dta>' 
+
+* Run gsem model
+
+gsem(i.yall <- c.pincome c.education c.unemployed c.inrdstrbtn c.autsen c.ethreat c.nat_ptrust c.glo_ptrust c.exefficacy c.age c.gender M1[cntry]@1), mlogit
+
+* save model
+
+outreg using ESS78DESPR.doc, replace ctitle(logit coeff)
