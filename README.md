@@ -12,7 +12,7 @@ This is the R-script where the joins of ESS wave 7 and 8 are performed for the i
 
 - model
 
-In this branche the model is shown (.txt-format due to lack of accesability of STATA). This model is used for the initial model and the robustness check. Furthermore a R-script is present for the interaction of anti-immigration with the type of countrye (i.e. mature or post-communist country).
+In this branche the model is shown (.txt-format due to lack of accesability of STATA). This model is used for the initial model and the robustness check. Furthermore a R-script is present for the interaction of anti-immigration with the type of country (i.e. mature or post-communist country).
 
 - AIC test
 
